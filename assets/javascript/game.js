@@ -1,29 +1,62 @@
-//create variables and definitions for crystals
 $(document).ready(function () {
-    var redGem = Math.floor(Math.random() * 10) + 1;
-
+    //create variables and definitions for crystals
+    var redGem;
     var blueGem;
-    do{
-        blueGem = Math.floor(Math.random() * 10) + 3
-    }while (blueGem === redGem);
-
-    var yellowGem;
-    do{
-        yellowGem = Math.floor(Math.random() * 10) + 6;
-    }while (yellowGem === redGem || yellowGem === blueGem);
-
     var greenGem;
-    do {
-        greenGem = Math.floor(Math.random() * 10) + 10
-    } while (greenGem === redGem || greenGem === blueGem || greenGem === yellowGem);
+    var yellowGem;
+    var chosenNumber;
+    var score;
+    var wins = 0;
+    var losses = 0;
 
+    var reset = function () {
+        score = 0;
+        $("#score").text(score);
+        $("#wins").text(wins);
+        $("#losses").text(losses);
 
-console.log(redGem);
-console.log(blueGem);
-console.log(yellowGem);
-console.log(greenGem);
+        redGem = Math.floor(Math.random() * 12) + 1;
 
-//create and define variable for gerated number
-var chosenNumber = Math.floor(Math.random() * 40) + 35;
-console.log(chosenNumber);
+        blueGem;
+        do {
+            blueGem = Math.floor(Math.random() * 12) + 1
+        } while (blueGem === redGem);
+
+        yellowGem;
+        do {
+            yellowGem = Math.floor(Math.random() * 12) + 1;
+        } while (yellowGem === redGem || yellowGem === blueGem);
+
+        greenGem;
+        do {
+            greenGem = Math.floor(Math.random() * 12) + 1;
+        } while (greenGem === redGem || greenGem === blueGem || greenGem === yellowGem);
+
+        //create and define variable for generated number
+        chosenNumber = Math.floor(Math.random() * 103) + 18;
+        $("#chosenNumber").text(chosenNumber);
+
+        console.log(chosenNumber);
+        console.log(redGem);
+        console.log(blueGem);
+        console.log(yellowGem);
+        console.log(greenGem);
+    };
+    rest;
+
+    $("#greenGem").click(function(){
+        score += greenGem;
+        $("#score").text(score);
+        if (score === chosenNumber){
+            wins++;
+            reset;
+        }
+        if (score > chosenNumber){
+            losses++;
+            reset;
+        }
+        else {
+            return;
+        }
+    });
 });
