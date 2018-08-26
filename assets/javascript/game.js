@@ -4,16 +4,16 @@ $(document).ready(function () {
     var blueGem;
     var greenGem;
     var yellowGem;
-    var chosenNumber;
-    var score;
+    var targetNum;
+    var score = 0;
     var wins = 0;
     var losses = 0;
 
     var reset = function () {
         score = 0;
         $("#score").text(score);
-        $("#wins").text(wins);
-        $("#losses").text(losses);
+        $("#wins").text("Wins: " + wins);
+        $("#losses").text("Losses: " + losses);
 
         redGem = Math.floor(Math.random() * 12) + 1;
 
@@ -33,29 +33,70 @@ $(document).ready(function () {
         } while (greenGem === redGem || greenGem === blueGem || greenGem === yellowGem);
 
         //create and define variable for generated number
-        chosenNumber = Math.floor(Math.random() * 103) + 18;
-        $("#chosenNumber").text(chosenNumber);
+        targetNum = Math.floor(Math.random() * 103) + 18;
+        $("#targetNum").text(targetNum);
 
-        console.log(chosenNumber);
+        console.log(targetNum);
         console.log(redGem);
         console.log(blueGem);
         console.log(yellowGem);
         console.log(greenGem);
     };
-    rest;
+    reset();
 
     $("#greenGem").click(function(){
         score += greenGem;
+        console.log(score);
         $("#score").text(score);
-        if (score === chosenNumber){
+        if (score === targetNum){
             wins++;
-            reset;
-        }
-        if (score > chosenNumber){
+            reset();
+        } else if (score > targetNum){
             losses++;
-            reset;
+            reset();
+        } else {
+            return;
         }
-        else {
+    });
+    $("#redGem").click(function(){
+        score += redGem;
+        console.log(score);
+        $("#score").text(score);
+        if (score === targetNum){
+            wins++;
+            reset();
+        } else if (score > targetNum){
+            losses++;
+            reset();
+        } else {
+            return;
+        }
+    });
+    $("#blueGem").click(function(){
+        score += blueGem;
+        console.log(score);
+        $("#score").text(score);
+        if (score === targetNum){
+            wins++;
+            reset();
+        } else if (score > targetNum){
+            losses++;
+            reset();
+        } else {
+            return;
+        }
+    });
+    $("#yellowGem").click(function(){
+        score += yellowGem;
+        console.log(score);
+        $("#score").text(score);
+        if (score === targetNum){
+            wins++;
+            reset();
+        } else if (score > targetNum){
+            losses++;
+            reset();
+        } else {
             return;
         }
     });

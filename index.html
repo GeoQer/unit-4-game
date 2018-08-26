@@ -1,27 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crystal Collector</title>
-    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script src="assets/javascript/game.js"></script>
 </head>
+
 <body>
-    <title>
-        <h1>CrystalCollector!</h1>
-    </title>
-    <div Id="Instructions"></div>
-    <div id="targetNum"></div>
-    <div id="wins-losses"></div>
-    <div id="redGem"></div>
-    <div id="blueGem"></div>
-    <div id="greenGem"></div>
-    <div id="yellowGem"></div>
-    <div id="yourScore"></div>
-    <div id="score"></div>
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="jumbotron jumbotron-fluid title">
+                    <div class="container">
+                        <h1 class="display-4">Crystal Collector</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="jumbotron jumbotron-fluid instructions">
+                    <div class="container">
+                        <p class="lead">You will be given a random number at the start of the game.</p>
+                        <br>
+                        <p class="lead">There are four crystals below. By clicking on a crystal, you will add a specific
+                            amount of points to your total score.</p>
+                        <br>
+                        <p class="lead">You win the game by matching your total score to the random number. You lose the
+                            game if your total score goes above the random number.</p>
+                        <br>
+                        <p class="lead">The value of each crystal is hidden from you until you click on it.</p>
+                        <br>
+                        <p class="lead">Each time the game resets, the values for the crystals will be reassigned.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 targetNum">
+                <div class="row">
+                    <p class="display-6">Target Number:</p>
+                </div>
+                <div class="row">
+                    <p id="targetNum" class="display-4"></p>
+                </div>
+            </div>
+            <div class="col-sm-2 wins-losses">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <p id="wins" class="display-6"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <p id="losses" class="display-6"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row crystals">
+        <div class="col-lg-9">
+            <div class="row">
+                <div class="col-md-3">
+                    <img id="redGem" class="img" src="assets/images/redGem.png">
+                </div>
+                <div class="col-md-3">
+                    <img id="blueGem" class="img" src="assets/images/blueGem.jpg">
+                </div>
+                <div class="col-md-3">
+                    <img id="greenGem" class="img" src="assets/images/greenGem.jpg">
+                </div>
+                <div class="col-md-3">
+                    <img id="yellowGem" class="img" src="assets/images/yellowGem.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <p class="display-6">Total Score:</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <p id="score" class="display-4"></p>
+        </div>
+    </div>
+    </div>
 </body>
+
 </html>
